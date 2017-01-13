@@ -31,10 +31,11 @@
     </div>
     <%= yield :navbar_banner %>
   </nav>
-  <% if notice %>
+  <div class="<%= content_for?(:container_class) ? yield(:container_class) : "container"  %>">
+
+    <% if notice %>
       <div class="alert alert-success" role="alert"><%= notice %></div>
     <% end %>
-  <div class="<%= content_for?(:container_class) ? yield(:container_class) : "container"  %>">
     <%= yield %>
   </div>
 
